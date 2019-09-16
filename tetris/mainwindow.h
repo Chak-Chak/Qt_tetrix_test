@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMovie>
+#include <QLabel>
 #include "gamewindow.h"
 
 QT_BEGIN_NAMESPACE
@@ -15,6 +17,8 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QMovie *movie;
+    QLabel *label;
 
 private slots:
 
