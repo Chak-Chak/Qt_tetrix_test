@@ -18,7 +18,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QMovie *movie;
-    QLabel *label;
+    //QLabel *label;
 
 private slots:
 

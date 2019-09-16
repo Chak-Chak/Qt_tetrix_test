@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>793</width>
+    <height>607</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Menu</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="exit">
@@ -24,17 +24,12 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">float: right;
-margin-right: 3%;
-margin-top: 5px;
-border-radius: 5px;
-padding: 5px 9px;
+     <string notr="true">display: inline-block;
+padding: 8px;
+color: #fff;
+border: 2px solid #fff;
 font-size: 18px;
-background-color: rgba(236,101,80,1);
-border-bottom: 5px solid rgba(217, 91, 72, 1);
-color: white;
-
-</string>
+border-radius: 15px</string>
     </property>
     <property name="text">
      <string>Выход</string>
@@ -50,15 +45,12 @@ color: white;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">float: right;
-margin-right: 3%;
-margin-top: 5px;
-border-radius: 5px;
-padding: 5px 9px;
-font-size: 20px;
-background-color: rgba(80,200,80,1);
-border-bottom: 5px solid rgba(80, 183, 72, 1);
-color: white;</string>
+     <string notr="true">display: inline-block;
+padding: 8px;
+color: #fff;
+border: 2px solid #fff;
+font-size: 24px;
+border-radius: 15px</string>
     </property>
     <property name="text">
      <string>Игра</string>
@@ -77,18 +69,20 @@ color: white;</string>
      <string/>
     </property>
    </widget>
+   <zorder>label</zorder>
+   <zorder>play</zorder>
+   <zorder>exit</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>793</width>
      <height>21</height>
     </rect>
    </property>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
  <connections/>

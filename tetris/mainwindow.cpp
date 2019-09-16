@@ -15,12 +15,11 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game_window, &GameWindow::main_window, this, &MainWindow::show);
 
     //Подключение гифки в главное окно
-    label = new QLabel(this);
+    //label = new QLabel(this);
     movie = new QMovie("D:/Projects/Tetris/tetris/resourse/images/space.gif");
-    label->setMovie(movie);
-    this->resize(800, 600);
-    label->resize(800, 600);
-    label->show();
+    ui->label->setMovie(movie);
+    ui->label->resize(800, 600);
+    ui->label->show();
     movie->start();
 }
 
