@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>GameOverWindow</class>
+ <widget class="QDialog" name="GameOverWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="background">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>300</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="againButton">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>220</y>
+     <width>120</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 3px solid #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 15px;
+}
+QPushButton:hover { background-color: rgba(220, 220, 220, 0.5); }
+QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
+   </property>
+   <property name="text">
+    <string>Еще раз</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="menuButton">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>220</y>
+     <width>120</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 3px solid #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 15px;
+}
+QPushButton:hover { background-color: rgba(220, 220, 220, 0.5); }
+QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
+   </property>
+   <property name="text">
+    <string>Меню</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="GOscore">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>100</y>
+     <width>130</width>
+     <height>70</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  width: 200px;
+  padding: 8px;
+  color: #fff;
+  font-size: 38px;</string>
+   </property>
+   <property name="text">
+    <string>Score:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>90</y>
+     <width>251</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="GameOverLabel">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>20</y>
+     <width>220</width>
+     <height>55</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  width: 200px;
+  padding: 8px;
+  color: #fff;
+  font-size: 38px;</string>
+   </property>
+   <property name="text">
+    <string>Game Over</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

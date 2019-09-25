@@ -1,12 +1,15 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QDir>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    //Параметры экрана
     ui->setupUi(this);
     this->setFixedSize(800, 600);
+    this->setWindowFlags(Qt::CustomizeWindowHint);
 
     //Инициализация игрового окна
     game_window = new GameWindow();
@@ -15,12 +18,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game_window, &GameWindow::main_window, this, &MainWindow::show);
 
     //Подключение гифки в главное окно
-    //label = new QLabel(this);
-    movie = new QMovie("D:/Projects/Tetris/tetris/resourse/images/space.gif");
+    QString pathToGIF = QDir::currentPath()+QString("/space.gif");
+    movie = new QMovie(pathToGIF);
+    //movie = new QMovie("D:/Projects/Tetris/tetris/resourse/images/space.gif");
     ui->label->setMovie(movie);
     ui->label->resize(800, 600);
     ui->label->show();
     movie->start();
+
 }
 
 MainWindow::~MainWindow()
@@ -36,5 +41,5 @@ void MainWindow::on_play_clicked()
 
 void MainWindow::on_exit_clicked()
 {
-    this->close();
+    QApplication::quit();
 }

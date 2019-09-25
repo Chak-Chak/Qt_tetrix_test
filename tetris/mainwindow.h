@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 #include <QMovie>
-#include <QLabel>
 #include "gamewindow.h"
 
 QT_BEGIN_NAMESPACE
@@ -18,7 +17,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QMovie *movie;
-    //QLabel *label;
 
 private slots:
 

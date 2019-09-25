@@ -16,29 +16,175 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>660</x>
-     <y>520</y>
+     <x>650</x>
+     <y>510</y>
      <width>120</width>
      <height>60</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">float: right;
-margin-right: 3%;
-margin-top: 5px;
-border-radius: 5px;
-padding: 5px 9px;
-font-size: 18px;
-background-color: rgba(236,101,80,1);
-border-bottom: 5px solid rgba(217, 91, 72, 1);
-color: white;
-
+    <string notr="true">QPushButton {
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 3px solid #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 15px;
+}
+QPushButton:hover { background-color: rgba(220, 220, 220, 0.5); }
+QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
+   </property>
+   <property name="text">
+    <string>Меню</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>600</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>50</y>
+     <width>241</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget {
+  color: #fff;
+ font-size: 32px;
+  text-align: center;
+  border-radius: 15px;
+  background-color: rgba(220, 220, 220, 0.5);
+}
+</string>
+   </property>
+   <layout class="QGridLayout" name="grid"/>
+  </widget>
+  <widget class="QPushButton" name="pauseButton">
+   <property name="geometry">
+    <rect>
+     <x>345</x>
+     <y>510</y>
+     <width>110</width>
+     <height>50</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 3px solid #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 15px;
+}
+QPushButton:hover { background-color: rgba(220, 220, 220, 0.5); }
+QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
+   </property>
+   <property name="text">
+    <string>Пауза</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="startButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>510</y>
+     <width>120</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+  width: 200px;
+  padding: 8px;
+  color: #fff;
+  border: 3px solid #fff;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 15px;
+}
+QPushButton:hover { background-color: rgba(220, 220, 220, 0.5); }
+QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
+   </property>
+   <property name="text">
+    <string>Старт</string>
+   </property>
+  </widget>
+  <widget class="QLCDNumber" name="scoreLcd">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>80</y>
+     <width>141</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  border: 3px solid #fff;
+  border-radius: 20px;
+</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="nextPieceLabel">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>80</y>
+     <width>180</width>
+     <height>250</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  border: 3px solid #fff;
+  border-radius: 20px;
+  background-color: rgba(220, 220, 220, 1);
 </string>
    </property>
    <property name="text">
-    <string>Назад</string>
+    <string/>
    </property>
   </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>50</y>
+     <width>241</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  border: 3px solid #fff;
+  border-radius: 20px;
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>gridWidget</zorder>
+  <zorder>pauseButton</zorder>
+  <zorder>startButton</zorder>
+  <zorder>scoreLcd</zorder>
+  <zorder>nextPieceLabel</zorder>
+  <zorder>label_2</zorder>
  </widget>
  <resources/>
  <connections/>
