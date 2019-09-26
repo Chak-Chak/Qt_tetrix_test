@@ -25,7 +25,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->label->resize(800, 600);
     ui->label->show();
     movie->start();
-
 }
 
 MainWindow::~MainWindow()

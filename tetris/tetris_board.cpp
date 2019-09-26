@@ -2,6 +2,7 @@
 
 #include <QtWidgets>
 #include <QMessageBox>
+#include "gamewindow.h"
 
 //! [0]
 tetris_board::tetris_board(QWidget *parent)
@@ -293,7 +294,8 @@ void tetris_board::newPiece()
         curPiece.setShape(NoShape);
         timer.stop();
         isStarted = false;     /////////////Концовка игры//////////////////
-        tetris_gameOver_info();
+        clearBoard();
+        emit game_over_window();
     }
 //! [30] //! [31]
 }
@@ -368,8 +370,3 @@ void tetris_board::drawSquare(QPainter &painter, int x, int y, TetrixShape shape
                      x + squareWidth() - 1, y + 1);
 }
 
-void tetris_board::tetris_gameOver_info()
-{
-    clearBoard();
-    //game_over_window->show();
-}

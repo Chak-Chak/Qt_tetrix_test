@@ -1,0 +1,10 @@
+debug/gameoverwindow.o
+debug/gamewindow.o
+debug/main.o
+debug/mainwindow.o
+debug/tetris_board.o
+debug/tetris_piece.o
+debug/moc_gameoverwindow.o
+debug/moc_gamewindow.o
+debug/moc_mainwindow.o
+debug/moc_tetris_board.o

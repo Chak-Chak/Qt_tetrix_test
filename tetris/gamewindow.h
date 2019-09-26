@@ -7,6 +7,7 @@
 #include <QWidget>
 
 #include "tetris_board.h"
+#include "gameoverwindow.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -35,8 +36,8 @@ signals:
 private slots:
     void on_pushButton_clicked();
 
+    void tetris_gameOver_info();
 
-    void on_startButton_clicked();
 
 private:
     Ui::GameWindow *ui;
@@ -45,12 +46,10 @@ private:
     QLabel *gridFrame; //Рамка для GridLayout
     QLabel *nextPieceLabel;
     QLCDNumber *scoreLcd;
-    //QLCDNumber *levelLcd;
-    //QLCDNumber *linesLcd;
     QPushButton *pauseButton; //Кнопка паузы
     QPushButton *startButton; //Кнопка старта
 
-    //GameOverWindow *game_over_window;
+    GameOverWindow *game_over_window;
 };
 
 #endif // GAMEWINDOW_H

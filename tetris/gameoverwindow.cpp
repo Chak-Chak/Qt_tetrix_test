@@ -1,19 +1,16 @@
 #include "gameoverwindow.h"
 #include "ui_gameoverwindow.h"
+#include "mainwindow.h"
+#include "gamewindow.h"
 
 GameOverWindow::GameOverWindow(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::GameOverWindow)
 {
     ui->setupUi(this);
-    this->setFixedSize(800, 600);
+    this->setFixedSize(400, 300);
     this->setWindowFlags(Qt::CustomizeWindowHint);
 
-    //Инициализация окна концовки
-    //game_window = new GameWindow();
-
-    //Подключаем к слоту запуск главного окна по нажатию кнопки в окне концовки
-    //connect(game_window, &GameWindow::main_window, this, &GameOverWindow::show);
 }
 
 GameOverWindow::~GameOverWindow()
@@ -23,12 +20,15 @@ GameOverWindow::~GameOverWindow()
 
 void GameOverWindow::on_againButton_clicked()
 {
+
+    GameWindow *again = new GameWindow();
+    again->setVisible(true);
     this->close();
-    //game_window->show();
 }
 
 void GameOverWindow::on_menuButton_clicked()
 {
+    MainWindow *menu = new MainWindow();
+    menu->setVisible(true);
     this->close();
-    //main_window->show();
 }

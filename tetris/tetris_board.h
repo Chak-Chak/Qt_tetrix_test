@@ -30,6 +30,7 @@ signals:
     void scoreChanged(int score);
     void levelChanged(int level);
     void linesRemovedChanged(int numLines);
+    void game_over_window();
 
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -51,7 +52,7 @@ private:
     void showNextPiece();
     bool tryMove(const tetris_piece &newPiece, int newX, int newY);
     void drawSquare(QPainter &painter, int x, int y, TetrixShape shape);
-    void tetris_gameOver_info();
+
 
     QBasicTimer timer;
     QPointer<QLabel> nextPieceLabel;

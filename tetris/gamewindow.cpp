@@ -13,6 +13,8 @@ GameWindow::GameWindow(QWidget *parent) :
     this->setFixedSize(800, 600);
     this->setWindowFlags(Qt::CustomizeWindowHint);
 
+    game_over_window = new GameOverWindow;
+
     //Подключение гифки на игровое окно
     QString pathToGIF = QDir::currentPath()+QString("/space.gif");
     movie = new QMovie(pathToGIF);
@@ -23,6 +25,7 @@ GameWindow::GameWindow(QWidget *parent) :
     movie->start();
 
     board = new tetris_board;
+    connect(board, SIGNAL(game_over_window()), this, SLOT(tetris_gameOver_info()));
 
     QLabel *nextPieceLabel = this->ui->nextPieceLabel;
     nextPieceLabel->setFrameStyle(QFrame::Box | QFrame::Raised);
@@ -32,10 +35,12 @@ GameWindow::GameWindow(QWidget *parent) :
     QLCDNumber *scoreLcd = this->ui->scoreLcd;
     scoreLcd->setSegmentStyle(QLCDNumber::Filled);
 
-    QPushButton *startButton= this->ui->startButton;
+    QPushButton *startButton = this->ui->startButton;
     startButton->setFocusPolicy(Qt::NoFocus);
-    QPushButton *pauseButton= this->ui->pauseButton;
+    QPushButton *pauseButton = this->ui->pauseButton;
     pauseButton->setFocusPolicy(Qt::NoFocus);
+    QPushButton *menuButton = this->ui->pushButton;
+    menuButton->setFocusPolicy(Qt::NoFocus);
 
     connect(startButton, &QPushButton::clicked, board, &tetris_board::start);
     connect(pauseButton, &QPushButton::clicked, board, &tetris_board::pause);
@@ -51,6 +56,8 @@ GameWindow::GameWindow(QWidget *parent) :
     QGridLayout *layout = ui->grid;
 
     layout->addWidget(board, 0, 1, 6, 1);
+
+    board->setFocus();
 
 }
 
@@ -74,7 +81,8 @@ QLabel *GameWindow::createLabel(const QString &text)
 }
 
 
-void GameWindow::on_startButton_clicked()
+void GameWindow::tetris_gameOver_info()
 {
-
+    game_over_window->show();
+    this->close();
 }

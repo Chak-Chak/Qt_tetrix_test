@@ -1,0 +1,10 @@
+release/gameoverwindow.o
+release/gamewindow.o
+release/main.o
+release/mainwindow.o
+release/tetris_board.o
+release/tetris_piece.o
+release/moc_gameoverwindow.o
+release/moc_gamewindow.o
+release/moc_mainwindow.o
+release/moc_tetris_board.o

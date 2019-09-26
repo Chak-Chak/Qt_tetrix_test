@@ -1,4 +1,5 @@
 QT       += core gui
+QT += multimedia
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -44,4 +45,5 @@ DISTFILES += \
     resourse/images/error_numbers.gif \
     resourse/images/rendering.gif \
     resourse/images/space.gif \
-    resourse/images/tower_train.gif
+    resourse/images/tower_train.gif \
+    resourse/sounds/mainMenuMusic.mp3

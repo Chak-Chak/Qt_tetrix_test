@@ -22,6 +22,7 @@ private slots:
 
 private:
     Ui::GameOverWindow *ui;
+
 };
 
 #endif // GAMEOVERWINDOW_H
