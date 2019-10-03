@@ -1,5 +1,5 @@
-QT       += core gui
-QT += multimedia
+QT       += core gui core gui sql multimedia multimediawidgets
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -47,3 +47,6 @@ DISTFILES += \
     resourse/images/space.gif \
     resourse/images/tower_train.gif \
     resourse/sounds/mainMenuMusic.mp3
+
+RESOURCES += \
+    resource.qrc

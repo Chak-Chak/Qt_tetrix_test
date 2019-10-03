@@ -28,28 +28,35 @@ class GameWindow : public QDialog
 public:
     explicit GameWindow(QWidget *parent = nullptr);
     ~GameWindow();
-    QMovie *movie;
+    QMovie *movie, *movie_2;
+
 
 signals:
     void main_window();
+    void sendData(QString str);
 
 private slots:
     void on_pushButton_clicked();
 
     void tetris_gameOver_info();
 
+    void onButtonSend();
+
+    void on_pauseButton_clicked();
 
 private:
+
     Ui::GameWindow *ui;
     QLabel *createLabel(const QString &text);
     tetris_board *board; //Игровое поле
     QLabel *gridFrame; //Рамка для GridLayout
     QLabel *nextPieceLabel;
-    QLCDNumber *scoreLcd;
     QPushButton *pauseButton; //Кнопка паузы
     QPushButton *startButton; //Кнопка старта
-
+    bool gameIsStarted;
+    QLCDNumber *scoreLcd;
     GameOverWindow *game_over_window;
+
 };
 
 #endif // GAMEWINDOW_H

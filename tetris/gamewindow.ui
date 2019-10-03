@@ -57,7 +57,7 @@ QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
     <rect>
      <x>280</x>
      <y>50</y>
-     <width>241</width>
+     <width>251</width>
      <height>411</height>
     </rect>
    </property>
@@ -164,7 +164,7 @@ QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
     <rect>
      <x>280</x>
      <y>50</y>
-     <width>241</width>
+     <width>251</width>
      <height>411</height>
     </rect>
    </property>
@@ -172,6 +172,19 @@ QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
     <string notr="true">  border: 3px solid #fff;
   border-radius: 20px;
 </string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="media_label">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>230</y>
+     <width>251</width>
+     <height>211</height>
+    </rect>
    </property>
    <property name="text">
     <string/>
@@ -185,6 +198,7 @@ QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
   <zorder>scoreLcd</zorder>
   <zorder>nextPieceLabel</zorder>
   <zorder>label_2</zorder>
+  <zorder>media_label</zorder>
  </widget>
  <resources/>
  <connections/>

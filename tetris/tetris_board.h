@@ -4,6 +4,7 @@
 #include <QBasicTimer>
 #include <QFrame>
 #include <QPointer>
+#include <QVector>
 
 #include <tetris_piece.h>
 
@@ -21,12 +22,15 @@ public:
     void setNextPieceLabel(QLabel *label);
     QSize sizeHint() const override;
     QSize minimumSizeHint() const override;
+    int score;
+    bool isStarted;
 
 public slots:
     void start();
     void pause();
 
 signals:
+    void IsStarted(bool isStarted);
     void scoreChanged(int score);
     void levelChanged(int level);
     void linesRemovedChanged(int numLines);
@@ -54,9 +58,9 @@ private:
     void drawSquare(QPainter &painter, int x, int y, TetrixShape shape);
 
 
+    QVector <bool> state;
     QBasicTimer timer;
     QPointer<QLabel> nextPieceLabel;
-    bool isStarted;
     bool isPaused;
     bool isWaitingAfterLine;
     tetris_piece curPiece;
@@ -65,7 +69,6 @@ private:
     int curY;
     int numLinesRemoved;
     int numPiecesDropped;
-    int score;
     int level;
     TetrixShape board[BoardWidth * BoardHeight];
 };

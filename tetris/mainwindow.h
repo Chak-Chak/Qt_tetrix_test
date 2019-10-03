@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include <QMovie>
 #include "gamewindow.h"
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,6 +19,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     QMovie *movie;
+    QMediaPlayer *m_player;
+    QMediaPlaylist *m_playlist;
 
 private slots:
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,14 +16,14 @@
   <widget class="QLabel" name="background">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>400</width>
-     <height>300</height>
+     <x>240</x>
+     <y>280</y>
+     <width>331</width>
+     <height>261</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">  background-color: grey;</string>
+    <string notr="true"/>
    </property>
    <property name="text">
     <string/>
@@ -32,10 +32,10 @@
   <widget class="QPushButton" name="againButton">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>220</y>
-     <width>120</width>
-     <height>50</height>
+     <x>40</x>
+     <y>500</y>
+     <width>151</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -58,10 +58,10 @@ QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
   <widget class="QPushButton" name="menuButton">
    <property name="geometry">
     <rect>
-     <x>230</x>
-     <y>220</y>
-     <width>120</width>
-     <height>50</height>
+     <x>610</x>
+     <y>500</y>
+     <width>151</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -84,10 +84,31 @@ QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
   <widget class="QLabel" name="GOscore">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>100</y>
-     <width>130</width>
-     <height>70</height>
+     <x>200</x>
+     <y>190</y>
+     <width>131</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">  width: 200px;
+  padding: 8px;
+  color: #fff;
+  font-size: 38px;
+
+</string>
+   </property>
+   <property name="text">
+    <string>Score:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="scoreLabel">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>190</y>
+     <width>251</width>
+     <height>91</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -97,41 +118,42 @@ QPushButton:pressed { background-color: rgba(220, 220, 220, 1); }</string>
   font-size: 38px;</string>
    </property>
    <property name="text">
-    <string>Score:</string>
+    <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_3">
+  <widget class="QLabel" name="background_2">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>90</y>
-     <width>251</width>
-     <height>91</height>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>600</height>
     </rect>
    </property>
    <property name="text">
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="GameOverLabel">
+  <widget class="QLabel" name="game_over_media">
    <property name="geometry">
     <rect>
-     <x>80</x>
-     <y>20</y>
-     <width>220</width>
-     <height>55</height>
+     <x>200</x>
+     <y>10</y>
+     <width>361</width>
+     <height>200</height>
     </rect>
    </property>
-   <property name="styleSheet">
-    <string notr="true">  width: 200px;
-  padding: 8px;
-  color: #fff;
-  font-size: 38px;</string>
-   </property>
    <property name="text">
-    <string>Game Over</string>
+    <string/>
    </property>
   </widget>
+  <zorder>background_2</zorder>
+  <zorder>background</zorder>
+  <zorder>againButton</zorder>
+  <zorder>menuButton</zorder>
+  <zorder>GOscore</zorder>
+  <zorder>scoreLabel</zorder>
+  <zorder>game_over_media</zorder>
  </widget>
  <resources/>
  <connections/>

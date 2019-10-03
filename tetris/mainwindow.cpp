@@ -18,13 +18,21 @@ MainWindow::MainWindow(QWidget *parent)
     connect(game_window, &GameWindow::main_window, this, &MainWindow::show);
 
     //Подключение гифки в главное окно
-    QString pathToGIF = QDir::currentPath()+QString("/space.gif");
-    movie = new QMovie(pathToGIF);
-    //movie = new QMovie("D:/Projects/Tetris/tetris/resourse/images/space.gif");
+    //QString pathToGIF = QDir::currentPath()+QString("qrc:resourse/images/rainbow_menu.gif");
+    movie = new QMovie(":/images/resourse/images/rainbow_menu.gif");
     ui->label->setMovie(movie);
     ui->label->resize(800, 600);
     ui->label->show();
     movie->start();
+
+    m_player = new QMediaPlayer(this);          // Инициализация плеера
+    m_playlist = new QMediaPlaylist(m_player);  // Инициализация плейлиста
+
+    m_player->setPlaylist(m_playlist);          // Установка плейлиста в аудио плеер
+    m_playlist->addMedia(QUrl(":/music/resourse/sounds/menu_music_3.mp3"));       // Добавление трека в плейлист
+    m_playlist->setPlaybackMode(QMediaPlaylist::CurrentItemOnce); // Зацикливание трека
+    m_player->play();   // Запускаем трек
+    //connect(this->ui->play, &QPushButton::clicked, m_player, &QMediaPlayer::stop);
 }
 
 MainWindow::~MainWindow()

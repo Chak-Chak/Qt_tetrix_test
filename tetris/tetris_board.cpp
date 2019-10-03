@@ -3,6 +3,7 @@
 #include <QtWidgets>
 #include <QMessageBox>
 #include "gamewindow.h"
+#include "gameoverwindow.h"
 
 //! [0]
 tetris_board::tetris_board(QWidget *parent)
@@ -15,6 +16,7 @@ tetris_board::tetris_board(QWidget *parent)
     clearBoard();
 
     nextPiece.setRandomShape();
+
 }
 //! [0]
 
@@ -291,11 +293,11 @@ void tetris_board::newPiece()
     curY = BoardHeight - 1 + curPiece.minY();
 
     if (!tryMove(curPiece, curX, curY)) {
+        emit game_over_window();
         curPiece.setShape(NoShape);
         timer.stop();
         isStarted = false;     /////////////Концовка игры//////////////////
         clearBoard();
-        emit game_over_window();
     }
 //! [30] //! [31]
 }
@@ -331,10 +333,12 @@ bool tetris_board::tryMove(const tetris_piece &newPiece, int newX, int newY)
     for (int i = 0; i < 4; ++i) {
         int x = newX + newPiece.x(i);
         int y = newY - newPiece.y(i);
-        if (x < 0 || x >= BoardWidth || y < 0 || y >= BoardHeight)
+        if (x < 0 || x >= BoardWidth || y < 0 || y >= BoardHeight){
             return false;
-        if (shapeAt(x, y) != NoShape)
+        }
+        if (shapeAt(x, y) != NoShape){
             return false;
+        }
     }
 //! [34]
 
@@ -369,4 +373,3 @@ void tetris_board::drawSquare(QPainter &painter, int x, int y, TetrixShape shape
     painter.drawLine(x + squareWidth() - 1, y + squareHeight() - 1,
                      x + squareWidth() - 1, y + 1);
 }
-

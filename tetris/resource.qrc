@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/music">
+        <file>resourse/sounds/menu_music_3.mp3</file>
+        <file>resourse/sounds/menu_music_3.wav</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>resourse/images/dance_dog.gif</file>
+        <file>resourse/images/game_over.gif</file>
+        <file>resourse/images/rainbow_menu.gif</file>
+        <file>resourse/images/squidward.gif</file>
+    </qresource>
+</RCC>

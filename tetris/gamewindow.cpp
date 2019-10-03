@@ -1,11 +1,14 @@
-#include "gamewindow.h"
 #include "tetris_board.h"
+#include "gamewindow.h"
 #include "ui_gamewindow.h"
 #include <QDir>
 #include <QLabel>
 #include <QtWidgets>
+#include <QMediaPlayer>
+#include <QMediaPlaylist>
+#include <QDebug>
 
-GameWindow::GameWindow(QWidget *parent) :
+GameWindow::GameWindow(QWidget *parent):
     QDialog(parent),
     ui(new Ui::GameWindow)
 {
@@ -16,13 +19,18 @@ GameWindow::GameWindow(QWidget *parent) :
     game_over_window = new GameOverWindow;
 
     //Подключение гифки на игровое окно
-    QString pathToGIF = QDir::currentPath()+QString("/space.gif");
-    movie = new QMovie(pathToGIF);
-    //movie = new QMovie("space.gif");
+    //QString pathToGIF = QDir::currentPath()+QString("qrc:resourse/images/rainbow_menu.gif");
+    //QString pathToGIF_2 = QDir::currentPath()+QString("qrc:resourse/images/dance_dog.gif");
+    movie = new QMovie(":/images/resourse/images/rainbow_menu.gif");
+    movie_2 = new QMovie(":/images/resourse/images/dance_dog.gif");
     ui->label->setMovie(movie);
+    ui->media_label->setMovie(movie_2);
     ui->label->resize(800, 600);
     ui->label->show();
     movie->start();
+    movie_2->start();
+
+
 
     board = new tetris_board;
     connect(board, SIGNAL(game_over_window()), this, SLOT(tetris_gameOver_info()));
@@ -59,6 +67,19 @@ GameWindow::GameWindow(QWidget *parent) :
 
     board->setFocus();
 
+    //connect(ui->startButton, SIGNAL(clicked()), game_over_window, SLOT(show())); // подключаем сигнал к слоту
+    connect(ui->startButton, SIGNAL(clicked()), this, SLOT(onButtonSend())); // подключаем клик по кнопке к определенному нами слоту
+    connect(this, SIGNAL(sendData(QString)), game_over_window, SLOT(recieveData(QString))); // подключение сигнала к слоту нашей формы
+
+
+    /*QMediaPlayer *m_player = new QMediaPlayer(this);          // Инициализация плеера
+    QMediaPlaylist *m_playlist = new QMediaPlaylist(m_player);  // Инициализация плейлиста
+    m_player->setPlaylist(m_playlist);          // Установка плейлиста в аудио плеер
+    m_playlist->addMedia(QUrl("qrc:/music/menu_music_3.mp3"));       // Добавление трека в плейлист
+    m_playlist->setPlaybackMode(QMediaPlaylist::CurrentItemInLoop); // Зацикливание трека
+    m_player->setVolume(50);
+    m_player->play();   // Запускаем трек*/
+    //connect(this->ui->pushButton, &QPushButton::clicked, m_player, &QMediaPlayer::stop);
 }
 
 GameWindow::~GameWindow()
@@ -66,10 +87,17 @@ GameWindow::~GameWindow()
     delete ui;
 }
 
+void GameWindow::onButtonSend()
+{
+    emit sendData(QString::number(this->ui->scoreLcd->value())); // вызываем сигнал, в котором передаём введённые данные
+}
+
 void GameWindow::on_pushButton_clicked()
 {
+    if(gameIsStarted == false){
     this->close();
     emit main_window();
+    }
 }
 
 
@@ -83,6 +111,13 @@ QLabel *GameWindow::createLabel(const QString &text)
 
 void GameWindow::tetris_gameOver_info()
 {
+    emit sendData(QString::number(this->ui->scoreLcd->value()));
     game_over_window->show();
     this->close();
+}
+
+
+void GameWindow::on_pauseButton_clicked()
+{
+    qDebug() << QString::number(this->ui->scoreLcd->value());
 }
